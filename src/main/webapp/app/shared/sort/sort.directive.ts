@@ -32,10 +32,8 @@ export class SortDirective<T> {
   sort(field: T): void {
     this.ascending = field !== this.predicate ? true : !this.ascending;
     this.predicate = field;
-    console.log(field);
     this.predicateChange.emit(field);
     this.ascendingChange.emit(this.ascending);
-    console.log(this.predicate)
     this.sortChange.emit({ predicate: this.predicate, ascending: this.ascending });
   }
 }

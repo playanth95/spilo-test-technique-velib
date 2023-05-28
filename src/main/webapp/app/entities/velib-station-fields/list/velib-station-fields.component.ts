@@ -3,7 +3,7 @@ import {ActivatedRoute, Data, ParamMap, Router} from '@angular/router';
 import {combineLatest, interval, Observable, switchMap, tap} from 'rxjs';
 
 import {ITEMS_PER_PAGE, PAGE_HEADER} from 'app/config/pagination.constants';
-import {ASC, ASC_OPEN_DATA, DEFAULT_SORT_DATA, SORT} from 'app/config/navigation.constants';
+import {ASC_OPEN_DATA, DEFAULT_SORT_DATA, SORT} from 'app/config/navigation.constants';
 import {EntityResponseType, VelibStationFieldsService} from '../service/velib-station-fields.service';
 import {Record, VelibAvailabilityApiResponse} from "../../velib-availability-api/velib-availability.model";
 
@@ -19,7 +19,7 @@ export class VelibStationFieldsComponent implements OnInit {
   ascending = true;
 
   itemsPerPage = ITEMS_PER_PAGE;
-  totalItems: number = 0;
+  totalItems = 0;
   page = 1;
 
   constructor(
@@ -35,7 +35,6 @@ export class VelibStationFieldsComponent implements OnInit {
     this.load();
     // Refresh every minute (60,000 milliseconds)
     interval(60000).subscribe(() => {
-      console.log("refresh")
       this.load();
     });
   }
@@ -56,6 +55,15 @@ export class VelibStationFieldsComponent implements OnInit {
     this.handleNavigation(page, this.predicate, this.ascending);
   }
 
+  setClasses(alert: number | undefined): { [key: string]: boolean } {
+    const classes = {'badge': Boolean(true)};
+    if (alert === 0) {
+      return {...classes, [' bg-danger']: true};
+    } else {
+      return {...classes, [' bg-success']: true};
+    }
+  }
+
   protected loadFromOpenApiWithRouteInformations(): Observable<EntityResponseType> {
     return combineLatest([this.activatedRoute.queryParamMap, this.activatedRoute.data]).pipe(
       tap(([params, data]) => this.fillComponentAttributeFromRoute(params, data)),
@@ -72,10 +80,10 @@ export class VelibStationFieldsComponent implements OnInit {
   }
 
   protected onResponseSuccess(response: EntityResponseType): void {
-    // @ts-ignore
-    this.fillComponentAttributesFromResponseHeader(response?.body?.nhits);
-    const dataFromBody = this.fillComponentAttributesFromResponseBody(response.body);
-    this.records = dataFromBody;
+    if (response?.body?.nhits) {
+      this.fillComponentAttributesFromResponseHeader(response.body.nhits);
+      this.records = this.fillComponentAttributesFromResponseBody(response.body);
+    }
   }
 
   protected fillComponentAttributesFromResponseBody(data: VelibAvailabilityApiResponse | null): Record[] {
@@ -121,12 +129,5 @@ export class VelibStationFieldsComponent implements OnInit {
     }
   }
 
-  setClasses(alert: number | undefined): { [key: string]: boolean } {
-    const classes = {'badge': Boolean(true)};
-    if (alert === 0) {
-      return {...classes, [' bg-danger']: true};
-    } else {
-      return {...classes, [' bg-success']: true};
-    }
-  }
+
 }

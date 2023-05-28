@@ -4,7 +4,6 @@ import { Router, ActivatedRouteSnapshot, NavigationEnd } from '@angular/router';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import dayjs from 'dayjs/esm';
 
-import { AccountService } from 'app/core/auth/account.service';
 
 @Component({
   selector: 'jhi-main',
@@ -14,7 +13,6 @@ export class MainComponent implements OnInit {
   private renderer: Renderer2;
 
   constructor(
-    private accountService: AccountService,
     private titleService: Title,
     private router: Router,
     private translateService: TranslateService,
@@ -25,8 +23,6 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
     // try to log in automatically
-    this.accountService.identity().subscribe();
-
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.updateTitle();

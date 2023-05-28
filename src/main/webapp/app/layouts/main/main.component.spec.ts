@@ -6,7 +6,6 @@ import { Title } from '@angular/platform-browser';
 import { Subject, of } from 'rxjs';
 import { TranslateModule, TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
-import { AccountService } from 'app/core/auth/account.service';
 
 import { MainComponent } from './main.component';
 
@@ -15,7 +14,6 @@ describe('MainComponent', () => {
   let fixture: ComponentFixture<MainComponent>;
   let titleService: Title;
   let translateService: TranslateService;
-  let mockAccountService: AccountService;
   const routerEventsSubject = new Subject<RouterEvent>();
   const routerState: any = { snapshot: { root: { data: {} } } };
   class MockRouter {
@@ -29,7 +27,6 @@ describe('MainComponent', () => {
       declarations: [MainComponent],
       providers: [
         Title,
-        AccountService,
         {
           provide: Router,
           useClass: MockRouter,
@@ -45,9 +42,6 @@ describe('MainComponent', () => {
     comp = fixture.componentInstance;
     titleService = TestBed.inject(Title);
     translateService = TestBed.inject(TranslateService);
-    mockAccountService = TestBed.inject(AccountService);
-    mockAccountService.identity = jest.fn(() => of(null));
-    mockAccountService.getAuthenticationState = jest.fn(() => of(null));
   });
 
   describe('page title', () => {

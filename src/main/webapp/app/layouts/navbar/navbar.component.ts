@@ -5,8 +5,6 @@ import { SessionStorageService } from 'ngx-webstorage';
 
 import { VERSION } from 'app/app.constants';
 import { LANGUAGES } from 'app/config/language.constants';
-import { Account } from 'app/core/auth/account.model';
-import { AccountService } from 'app/core/auth/account.service';
 import { ProfileService } from 'app/layouts/profiles/profile.service';
 import { EntityNavbarItems } from 'app/entities/entity-navbar-items';
 
@@ -21,13 +19,11 @@ export class NavbarComponent implements OnInit {
   languages = LANGUAGES;
   openAPIEnabled?: boolean;
   version = '';
-  account: Account | null = null;
   entitiesNavbarItems: any[] = [];
 
   constructor(
     private translateService: TranslateService,
     private sessionStorageService: SessionStorageService,
-    private accountService: AccountService,
     private profileService: ProfileService,
     private router: Router
   ) {
@@ -43,9 +39,6 @@ export class NavbarComponent implements OnInit {
       this.openAPIEnabled = profileInfo.openAPIEnabled;
     });
 
-    this.accountService.getAuthenticationState().subscribe(account => {
-      this.account = account;
-    });
   }
 
   changeLanguage(languageKey: string): void {
