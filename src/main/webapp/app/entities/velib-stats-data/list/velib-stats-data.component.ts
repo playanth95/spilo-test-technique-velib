@@ -36,7 +36,7 @@ export class VelibStatsDataComponent implements OnInit {
   }
 
   getAvailability(data: HourlyData | undefined, hour: string): number {
-    if (data && data[hour]) {
+    if (data?.[hour]) {
       return data[hour];
     }
     return 0;

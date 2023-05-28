@@ -20,7 +20,6 @@ export class VelibStationFieldsService {
 
   query(req?: Pagination): Observable<HttpResponse<VelibAvailabilityApiResponse>> {
     const options = createRequestOption(req);
-    console.log(options.keys())
     return this.http.get<VelibAvailabilityApiResponse>(this.resourceUrl, {params: options, observe: 'response'});
   }
 

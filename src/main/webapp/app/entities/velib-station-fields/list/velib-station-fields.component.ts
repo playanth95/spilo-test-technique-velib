@@ -80,7 +80,7 @@ export class VelibStationFieldsComponent implements OnInit {
   }
 
   protected onResponseSuccess(response: EntityResponseType): void {
-    if (response?.body?.nhits) {
+    if (response.body && response.body.nhits) {
       this.fillComponentAttributesFromResponseHeader(response.body.nhits);
       this.records = this.fillComponentAttributesFromResponseBody(response.body);
     }
