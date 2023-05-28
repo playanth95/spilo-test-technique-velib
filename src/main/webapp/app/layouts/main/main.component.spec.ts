@@ -1,5 +1,3 @@
-jest.mock('app/core/auth/account.service');
-
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router, RouterEvent, NavigationEnd, NavigationStart } from '@angular/router';
 import { Title } from '@angular/platform-browser';
