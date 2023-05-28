@@ -1,0 +1,65 @@
+{
+  "applications": "*",
+  "changelogDate": "20230526074124",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "velib_station_fields",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "stationcode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ebike",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "mechanical",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "coordonneesGeo",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "numbikesavailable",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "numdocksavailable",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "capacity",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "isRenting",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isInstalled",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nomArrondissementCommunes",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isReturning",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "VelibStationFields",
+  "pagination": "pagination",
+  "readOnly": true,
+  "relationships": [],
+  "service": "no",
+  "skipServer": true
+}

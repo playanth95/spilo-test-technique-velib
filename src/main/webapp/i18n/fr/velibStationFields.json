@@ -1,0 +1,29 @@
+{
+  "velibstatsApp": {
+    "velibStationFields": {
+      "home": {
+        "title": "Stations Velibs informations",
+        "refreshListLabel": "Actualiser la liste",
+        "notFound": "Aucun Velib Station Fields trouvé"
+      },
+      "detail": {
+        "title": "Velib Station Fields"
+      },
+      "id": "ID",
+      "name": "Nom station",
+      "stationcode": "numéro unique d’identification de la station",
+      "ebike": "Vélos électriques disponibles",
+      "mechanical": "Vélos mécaniques disponibles",
+      "coordonneesGeo": "Coordonnees Geo",
+      "numbikesavailable": "Nombre total vélos disponibles",
+      "numdocksavailable": "Nombre bornettes libres",
+      "capacity": "Capacité",
+      "isRenting": "Borne de paiement disponible",
+      "isInstalled": "Station en fonctionnement",
+      "nomArrondissementCommunes": "Nom communes équipées",
+      "isReturning": "Retour vélib possible",
+      "dist": "Distance de Splio",
+      "duedate": "Date d'actualisation"
+    }
+  }
+}

@@ -1,0 +1,470 @@
+{
+  "nhits": 38,
+  "parameters": {
+    "dataset": [
+      "velib-disponibilite-en-temps-reel"
+    ],
+    "timezone": "UTC",
+    "rows": 10,
+    "format": "json",
+    "geofilter.distance": [
+      "48.8706875,2.3382726,1000"
+    ],
+    "facet": [
+      "overflowactivation",
+      "creditcard",
+      "kioskstate",
+      "station_state"
+    ]
+  },
+  "records": [
+    {
+      "datasetid": "velib-disponibilite-en-temps-reel",
+      "recordid": "df5cb9aff36247eeb893aa795cfe153a82b36b35",
+      "fields": {
+        "station_state": "Operative",
+        "dist": "84",
+        "densitylevel": "1",
+        "nbbikeoverflow": 0,
+        "maxbikeoverflow": 16,
+        "nbedock": 17,
+        "station_name": "Favart - Italiens",
+        "kioskstate": "yes",
+        "nbfreeedock": 5,
+        "station_type": "yes",
+        "station_code": "2013",
+        "creditcard": "no",
+        "station": "{\"code\": \"2013\", \"name\": \"Favart - Italiens\", \"state\": \"Operative\", \"type\": \"yes\", \"dueDate\": 1552818372, \"gps\": {\"latitude\": 48.87144635392104, \"longitude\": 2.338290105850787}}",
+        "nbebike": 0,
+        "duedate": "2019-03-17",
+        "nbebikeoverflow": 0,
+        "nbfreedock": 2,
+        "overflow": "no",
+        "nbdock": 2,
+        "geo": [
+          48.87144635392104,
+          2.338290105850787
+        ],
+        "overflowactivation": "no",
+        "nbbike": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.338290105850787,
+          48.87144635392104
+        ]
+      },
+      "record_timestamp": "2019-05-13T16:01:52+00:00"
+    },
+    {
+      "datasetid": "velib-disponibilite-en-temps-reel",
+      "recordid": "2291f024c338485ab6da1f8a6fcbe217463cee6e",
+      "fields": {
+        "station_state": "Operative",
+        "dist": "147",
+        "densitylevel": "1",
+        "nbbikeoverflow": 0,
+        "maxbikeoverflow": 33,
+        "nbedock": 33,
+        "station_name": "Laffitte - Italiens",
+        "kioskstate": "yes",
+        "nbfreeedock": 18,
+        "station_type": "yes",
+        "station_code": "9023",
+        "creditcard": "no",
+        "station": "{\"code\": \"9023\", \"name\": \"Laffitte - Italiens\", \"state\": \"Operative\", \"type\": \"yes\", \"dueDate\": 1546300800, \"gps\": {\"latitude\": 48.871815737396304, \"longitude\": 2.337201547845077}}",
+        "nbebike": 0,
+        "duedate": "2019-01-01",
+        "nbebikeoverflow": 0,
+        "nbfreedock": 0,
+        "overflow": "no",
+        "nbdock": 0,
+        "geo": [
+          48.871815737396304,
+          2.337201547845077
+        ],
+        "overflowactivation": "no",
+        "nbbike": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.337201547845077,
+          48.871815737396304
+        ]
+      },
+      "record_timestamp": "2019-05-13T16:01:52+00:00"
+    },
+    {
+      "datasetid": "velib-disponibilite-en-temps-reel",
+      "recordid": "4c1cd12a784171dcf43a4adfb9b83721375edb4a",
+      "fields": {
+        "station_state": "Operative",
+        "dist": "244",
+        "densitylevel": "1",
+        "nbbikeoverflow": 0,
+        "maxbikeoverflow": 0,
+        "nbedock": 39,
+        "station_name": "Vivienne - Montmartre",
+        "kioskstate": "yes",
+        "nbfreeedock": 11,
+        "station_type": "yes",
+        "station_code": "2108",
+        "creditcard": "yes",
+        "station": "{\"code\": \"2108\", \"name\": \"Vivienne - Montmartre\", \"state\": \"Operative\", \"type\": \"yes\", \"dueDate\": 1532988000, \"gps\": {\"latitude\": 48.8713475973833, \"longitude\": 2.341458834707737}}",
+        "nbebike": 4,
+        "duedate": "2018-07-30",
+        "nbebikeoverflow": 0,
+        "nbfreedock": 0,
+        "overflow": "no",
+        "nbdock": 0,
+        "geo": [
+          48.8713475973833,
+          2.341458834707737
+        ],
+        "overflowactivation": "no",
+        "nbbike": 24
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.341458834707737,
+          48.8713475973833
+        ]
+      },
+      "record_timestamp": "2019-05-13T16:01:52+00:00"
+    },
+    {
+      "datasetid": "velib-disponibilite-en-temps-reel",
+      "recordid": "c0aee562b3c95d62c712f65bcf6dcb38905b797e",
+      "fields": {
+        "station_state": "Operative",
+        "dist": "266",
+        "densitylevel": "1",
+        "nbbikeoverflow": 0,
+        "maxbikeoverflow": 0,
+        "nbedock": 17,
+        "station_name": "Biblioth\u00e8que Nationale",
+        "kioskstate": "yes",
+        "nbfreeedock": 10,
+        "station_type": "yes",
+        "station_code": "2112",
+        "creditcard": "no",
+        "station": "{\"code\": \"2112\", \"name\": \"Biblioth\u00e8que Nationale\", \"state\": \"Operative\", \"type\": \"yes\", \"dueDate\": 1561842000, \"gps\": {\"latitude\": 48.868288993514916, \"longitude\": 2.338089309632778}}",
+        "nbebike": 1,
+        "duedate": "2019-06-29",
+        "nbebikeoverflow": 0,
+        "nbfreedock": 0,
+        "overflow": "no",
+        "nbdock": 0,
+        "geo": [
+          48.868288993514916,
+          2.338089309632778
+        ],
+        "overflowactivation": "no",
+        "nbbike": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.338089309632778,
+          48.868288993514916
+        ]
+      },
+      "record_timestamp": "2019-05-13T16:01:52+00:00"
+    },
+    {
+      "datasetid": "velib-disponibilite-en-temps-reel",
+      "recordid": "947e527008c6b8d644a024c7e34b4b6e635e4f73",
+      "fields": {
+        "station_state": "Operative",
+        "dist": "296",
+        "densitylevel": "1",
+        "nbbikeoverflow": 0,
+        "maxbikeoverflow": 0,
+        "nbedock": 33,
+        "station_name": "Rossini - Laffitte",
+        "kioskstate": "yes",
+        "nbfreeedock": 15,
+        "station_type": "yes",
+        "station_code": "9022",
+        "creditcard": "no",
+        "station": "{\"code\": \"9022\", \"name\": \"Rossini - Laffitte\", \"state\": \"Operative\", \"type\": \"yes\", \"dueDate\": 1531692000, \"gps\": {\"latitude\": 48.87334627510507, \"longitude\": 2.337980867701675}}",
+        "nbebike": 1,
+        "duedate": "2018-07-15",
+        "nbebikeoverflow": 0,
+        "nbfreedock": 0,
+        "overflow": "no",
+        "nbdock": 0,
+        "geo": [
+          48.87334627510507,
+          2.337980867701675
+        ],
+        "overflowactivation": "no",
+        "nbbike": 17
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.337980867701675,
+          48.87334627510507
+        ]
+      },
+      "record_timestamp": "2019-05-13T16:01:52+00:00"
+    },
+    {
+      "datasetid": "velib-disponibilite-en-temps-reel",
+      "recordid": "e13eb5fbedee3ddbcfd465b32068bf5b794ace7c",
+      "fields": {
+        "station_state": "Operative",
+        "dist": "339",
+        "densitylevel": "1",
+        "nbbikeoverflow": 0,
+        "maxbikeoverflow": 24,
+        "nbedock": 24,
+        "station_name": "Mairie du 9\u00e8me",
+        "kioskstate": "yes",
+        "nbfreeedock": 17,
+        "station_type": "yes",
+        "station_code": "9013",
+        "creditcard": "yes",
+        "station": "{\"code\": \"9013\", \"name\": \"Mairie du 9\u00e8me\", \"state\": \"Operative\", \"type\": \"yes\", \"dueDate\": 1512570691, \"gps\": {\"latitude\": 48.87326713758289, \"longitude\": 2.340753448052758}}",
+        "nbebike": 2,
+        "duedate": "2017-12-06",
+        "nbebikeoverflow": 0,
+        "nbfreedock": 1,
+        "overflow": "no",
+        "nbdock": 1,
+        "geo": [
+          48.87326713758289,
+          2.340753448052758
+        ],
+        "overflowactivation": "no",
+        "nbbike": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.340753448052758,
+          48.87326713758289
+        ]
+      },
+      "record_timestamp": "2019-05-13T16:01:52+00:00"
+    },
+    {
+      "datasetid": "velib-disponibilite-en-temps-reel",
+      "recordid": "afd68758889228abe8693cc640b5c7401bffbe5b",
+      "fields": {
+        "station_state": "Operative",
+        "dist": "353",
+        "densitylevel": "1",
+        "nbbikeoverflow": 0,
+        "maxbikeoverflow": 29,
+        "nbedock": 0,
+        "station_name": "Uz\u00e8s - Montmartre",
+        "kioskstate": "yes",
+        "nbfreeedock": 0,
+        "station_type": "yes",
+        "station_code": "2010",
+        "creditcard": "yes",
+        "station": "{\"code\": \"2010\", \"name\": \"Uz\u00e8s - Montmartre\", \"state\": \"Operative\", \"type\": \"yes\", \"dueDate\": 1521154800, \"gps\": {\"latitude\": 48.870790980240706, \"longitude\": 2.3431010171771054}}",
+        "nbebike": 1,
+        "duedate": "2018-03-15",
+        "nbebikeoverflow": 0,
+        "nbfreedock": 8,
+        "overflow": "no",
+        "nbdock": 29,
+        "geo": [
+          48.870790980240706,
+          2.3431010171771054
+        ],
+        "overflowactivation": "no",
+        "nbbike": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3431010171771054,
+          48.870790980240706
+        ]
+      },
+      "record_timestamp": "2019-05-13T16:01:52+00:00"
+    },
+    {
+      "datasetid": "velib-disponibilite-en-temps-reel",
+      "recordid": "ebf2b5eb466fa34a06b83b80c85f672fdf51fd8b",
+      "fields": {
+        "station_state": "Operative",
+        "dist": "366",
+        "densitylevel": "1",
+        "nbbikeoverflow": 0,
+        "maxbikeoverflow": 0,
+        "nbedock": 53,
+        "station_name": "Taitbout - La Fayette",
+        "kioskstate": "yes",
+        "nbfreeedock": 51,
+        "station_type": "yes",
+        "station_code": "9024",
+        "creditcard": "yes",
+        "station": "{\"code\": \"9024\", \"name\": \"Taitbout - La Fayette\", \"state\": \"Operative\", \"type\": \"yes\", \"dueDate\": 1548889200, \"gps\": {\"latitude\": 48.87332988919973, \"longitude\": 2.3352625966072087}}",
+        "nbebike": 1,
+        "duedate": "2019-01-30",
+        "nbebikeoverflow": 0,
+        "nbfreedock": 0,
+        "overflow": "no",
+        "nbdock": 0,
+        "geo": [
+          48.87332988919973,
+          2.3352625966072087
+        ],
+        "overflowactivation": "no",
+        "nbbike": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3352625966072087,
+          48.87332988919973
+        ]
+      },
+      "record_timestamp": "2019-05-13T16:01:52+00:00"
+    },
+    {
+      "datasetid": "velib-disponibilite-en-temps-reel",
+      "recordid": "7988cc0991c8163b48aa47c1b128a91bda9d1f38",
+      "fields": {
+        "station_state": "Operative",
+        "dist": "455",
+        "densitylevel": "1",
+        "nbbikeoverflow": 0,
+        "maxbikeoverflow": 0,
+        "nbedock": 17,
+        "station_name": "Daunou - Louis le Grand",
+        "kioskstate": "yes",
+        "nbfreeedock": 6,
+        "station_type": "yes",
+        "station_code": "2014",
+        "creditcard": "yes",
+        "station": "{\"code\": \"2014\", \"name\": \"Daunou - Louis le Grand\", \"state\": \"Operative\", \"type\": \"yes\", \"dueDate\": 1546382700, \"gps\": {\"latitude\": 48.869113, \"longitude\": 2.332515}}",
+        "nbebike": 0,
+        "duedate": "2019-01-01",
+        "nbebikeoverflow": 0,
+        "nbfreedock": 0,
+        "overflow": "no",
+        "nbdock": 0,
+        "geo": [
+          48.869113,
+          2.332515
+        ],
+        "overflowactivation": "no",
+        "nbbike": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.332515,
+          48.869113
+        ]
+      },
+      "record_timestamp": "2019-05-13T16:01:52+00:00"
+    },
+    {
+      "datasetid": "velib-disponibilite-en-temps-reel",
+      "recordid": "eaf6fa261a2ee4cdc68157945a0f9a30e8fa0fea",
+      "fields": {
+        "station_state": "Operative",
+        "dist": "541",
+        "densitylevel": "1",
+        "nbbikeoverflow": 0,
+        "maxbikeoverflow": 35,
+        "nbedock": 35,
+        "station_name": "Faubourg Montmartre - La Fayette",
+        "kioskstate": "yes",
+        "nbfreeedock": 33,
+        "station_type": "yes",
+        "station_code": "9014",
+        "creditcard": "yes",
+        "station": "{\"code\": \"9014\", \"name\": \"Faubourg Montmartre - La Fayette\", \"state\": \"Operative\", \"type\": \"yes\", \"dueDate\": 1519772417, \"gps\": {\"latitude\": 48.87525454905335, \"longitude\": 2.340853661298752}}",
+        "nbebike": 0,
+        "duedate": "2018-02-27",
+        "nbebikeoverflow": 0,
+        "nbfreedock": 0,
+        "overflow": "no",
+        "nbdock": 0,
+        "geo": [
+          48.87525454905335,
+          2.340853661298752
+        ],
+        "overflowactivation": "no",
+        "nbbike": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.340853661298752,
+          48.87525454905335
+        ]
+      },
+      "record_timestamp": "2019-05-13T16:01:52+00:00"
+    }
+  ],
+  "facet_groups": [
+    {
+      "name": "overflowactivation",
+      "facets": [
+        {
+          "name": "no",
+          "path": "no",
+          "count": 38,
+          "state": "displayed"
+        }
+      ]
+    },
+    {
+      "name": "creditcard",
+      "facets": [
+        {
+          "name": "yes",
+          "path": "yes",
+          "count": 27,
+          "state": "displayed"
+        },
+        {
+          "name": "no",
+          "path": "no",
+          "count": 11,
+          "state": "displayed"
+        }
+      ]
+    },
+    {
+      "name": "kioskstate",
+      "facets": [
+        {
+          "name": "yes",
+          "path": "yes",
+          "count": 38,
+          "state": "displayed"
+        }
+      ]
+    },
+    {
+      "name": "station_state",
+      "facets": [
+        {
+          "name": "Operative",
+          "path": "Operative",
+          "count": 37,
+          "state": "displayed"
+        },
+        {
+          "name": "Close",
+          "path": "Close",
+          "count": 1,
+          "state": "displayed"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+<div *ngIf="velibDataApiResponse">
+  <h4>Disponiblité des vélibs en moyenne par heure et par station</h4>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Station</th>
+      <th *ngFor="let hour of getHours(velibDataApiResponse?.stationNameHourAverageBikeAvailable)">{{ hour }}h
+        - {{sum(hour)}}h
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let station of getStations(velibDataApiResponse?.stationNameHourAverageBikeAvailable)">
+      <td>{{ station }}</td>
+      <td
+        *ngFor="let hour of getHours(velibDataApiResponse?.stationNameHourAverageBikeAvailable)">{{ getAvailability(velibDataApiResponse?.stationNameHourAverageBikeAvailable?.[station], hour) | number: '1.0-0' }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h4>Disponiblité des emplacements libres en moyenne par heure et par station</h4>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Station</th>
+      <th *ngFor="let hour of getHours(velibDataApiResponse?.stationNameHourAverageFreeDockAvailable)">{{ hour }}h
+        - {{sum(hour)}}h
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let station of getStations(velibDataApiResponse?.stationNameHourAverageFreeDockAvailable)">
+      <td>{{ station }}</td>
+      <td
+        *ngFor="let hour of getHours(velibDataApiResponse?.stationNameHourAverageFreeDockAvailable)">{{ getAvailability(velibDataApiResponse?.stationNameHourAverageFreeDockAvailable?.[station], hour) | number: '1.0-0' }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,146 @@
+<div>
+  <h2 id="page-heading" data-cy="VelibStationFieldsHeading">
+    <span jhiTranslate="velibstatsApp.velibStationFields.home.title">VelibStationFields</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="velibstatsApp.velibStationFields.home.refreshListLabel">Actualiser la liste</span>
+      </button>
+    </div>
+  </h2>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="records?.length === 0">
+    <span jhiTranslate="velibstatsApp.velibStationFields.home.notFound">Aucun Velib Station fields? trouvé</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="records && records.length > 0">
+    <p>Liste des stations de Vélibs proche de splio, inférieures à 1km de distance !</p>
+    <p>La Liste des stations de Vélibs proche de splio, est rafraîchie toutes les minutes</p>
+
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="duedate">
+            <div class="d-flex">
+              <span jhiTranslate="velibstatsApp.velibStationFields.duedate">duedate</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="name">
+            <div class="d-flex">
+              <span jhiTranslate="velibstatsApp.velibStationFields.name">Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="dist">
+            <div class="d-flex">
+              <span jhiTranslate="velibstatsApp.velibStationFields.dist">Distance</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="stationcode">
+            <div class="d-flex">
+              <span jhiTranslate="velibstatsApp.velibStationFields.stationcode">Stationcode</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="ebike">
+            <div class="d-flex">
+              <span jhiTranslate="velibstatsApp.velibStationFields.ebike">Ebike</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="mechanical">
+            <div class="d-flex">
+              <span jhiTranslate="velibstatsApp.velibStationFields.mechanical">Mechanical</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="numbikesavailable">
+            <div class="d-flex">
+              <span jhiTranslate="velibstatsApp.velibStationFields.numbikesavailable">Numbikesavailable</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="numdocksavailable">
+            <div class="d-flex">
+              <span jhiTranslate="velibstatsApp.velibStationFields.numdocksavailable">Numdocksavailable</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="capacity">
+            <div class="d-flex">
+              <span jhiTranslate="velibstatsApp.velibStationFields.capacity">Capacity</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="is_renting">
+            <div class="d-flex">
+              <span jhiTranslate="velibstatsApp.velibStationFields.isRenting">Is Renting</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="is_installed">
+            <div class="d-flex">
+              <span jhiTranslate="velibstatsApp.velibStationFields.isInstalled">Is Installed</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nom_arrondissement_communes">
+            <div class="d-flex">
+              <span jhiTranslate="velibstatsApp.velibStationFields.nomArrondissementCommunes">Nom Arrondissement Communes</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="isReturning">
+            <div class="d-flex">
+              <span jhiTranslate="velibstatsApp.velibStationFields.isReturning">Is Returning</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let record of records; trackBy: trackId" data-cy="entityTable">
+          <td>{{ record.fields?.duedate | date: 'dd/MM/yyyy hh:mm' }}</td>
+          <td>{{ record.fields?.name }}</td>
+          <td>{{ record.fields?.dist | number: '1.0-0' }} m</td>
+          <td>{{ record.fields?.stationcode }}</td>
+          <td>{{ record.fields?.ebike }}</td>
+          <td>{{ record.fields?.mechanical }}</td>
+          <td><span [ngClass]="setClasses(record.fields?.numbikesavailable)">{{ record.fields?.numbikesavailable }}</span></td>
+          <td><span [ngClass]="setClasses(record.fields?.numdocksavailable)">{{ record.fields?.numdocksavailable }}</span></td>
+          <td>{{ record.fields?.capacity }}</td>
+          <td>{{ record.fields?.is_renting }}</td>
+          <td>{{ record.fields?.is_installed }}</td>
+          <td>{{ record.fields?.nom_arrondissement_communes }}</td>
+          <td>{{ record.fields?.is_returning }}</td>
+          <td class="text-end">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="records && records.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>
+<jhi-velib-stats-data></jhi-velib-stats-data>

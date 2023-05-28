@@ -1,0 +1,20 @@
+entity VelibStationFields {
+  name String
+  stationcode String
+  ebike Integer
+  mechanical Integer
+  coordonneesGeo Double
+  numbikesavailable Integer
+  numdocksavailable Integer
+  capacity Integer
+  isRenting String
+  isInstalled String
+  nomArrondissementCommunes String
+  isReturning String
+}
+
+@skipServer
+@readOnly
+entity VelibStationFields
+
+paginate VelibStationFields with pagination
