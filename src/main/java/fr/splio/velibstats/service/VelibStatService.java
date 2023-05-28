@@ -55,6 +55,7 @@ public class VelibStatService {
             // Parse the JSON string into a generic object0
         } catch (IOException e) {
             log.error("Erreur lecture fichier", e);
+            throw new RuntimeException(e);
         }
         VelibStatResponse velibStatResponse = new VelibStatResponse();
         velibStatResponse.setStationNameHourAverageFreeDockAvailable(calculAverageByStation(stationHourAvailableDockData, fieldFromEachRecords));
@@ -62,7 +63,7 @@ public class VelibStatService {
         return velibStatResponse;
     }
 
-    private List<FieldDTO> buildRecordFieldListFromDataSet(String dataSetFileName) throws IOException {
+    public List<FieldDTO> buildRecordFieldListFromDataSet(String dataSetFileName) throws IOException {
         List<FieldDTO> fieldFromEachRecords = new ArrayList<>();
         BufferedReader bufferedReader = getBufferedReaderFromDataSet(dataSetFileName);
         String line;
