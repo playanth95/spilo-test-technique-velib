@@ -49,7 +49,7 @@ export class VelibStatsDataComponent implements OnInit {
   }
 
   getTopThreeStation(data: StationData | undefined): any[] {
-    let stationTopThreeMap = new Map<string, number>;
+    const stationTopThreeMap = new Map<string, number>;
     if (data) {
       for (const station of this.getStations(data)) {
         let sumBikeAvaibableTotal = 0
@@ -70,8 +70,7 @@ export class VelibStatsDataComponent implements OnInit {
    */
   sortAndSliceMap(map: Map<string, number>, count: number): any[] {
     const sortedArray = Array.from(map.entries()).sort((a, b) => b[1] - a[1]);
-    const slicedArray = sortedArray.slice(0, count);
-    return slicedArray;
+    return sortedArray.slice(0, count);
   }
 
 }
