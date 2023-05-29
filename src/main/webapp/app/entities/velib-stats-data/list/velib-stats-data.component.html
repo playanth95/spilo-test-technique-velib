@@ -1,4 +1,25 @@
 <div *ngIf="velibDataApiResponse">
+
+  <h4>Top 3 des stations à privilégier</h4>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Station</th>
+      <th>Moyenne vélos disponibles sur la journée
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr
+      *ngFor="let topThreeStation of getTopThreeStation(velibDataApiResponse?.stationNameHourAverageBikeAvailable) ">
+      <td>{{ topThreeStation[0] }}</td>
+      <td
+      >{{topThreeStation[1]}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+
   <h4>Disponiblité des vélibs en moyenne par heure et par station</h4>
   <table class="table table-striped">
     <thead>
