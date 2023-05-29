@@ -5,25 +5,25 @@ import {ActivatedRoute} from '@angular/router';
 import {RouterTestingModule} from '@angular/router/testing';
 import {of} from 'rxjs';
 
-import {VelibStationFieldsService} from '../service/velib-station-fields.service';
+import {VelibDataRealtimeApiService} from '../service/velib-data-realtime-api.service';
 
-import {VelibStationFieldsComponent} from './velib-station-fields.component';
+import {VelibDataRealtimeListComponent} from './velib-data-realtime-list.component';
 import SpyInstance = jest.SpyInstance;
 import {VelibAvailabilityApiResponse} from "../../velib-availability-api/velib-availability.model";
 
 describe('VelibStationFields Management Component', () => {
-  let comp: VelibStationFieldsComponent;
-  let fixture: ComponentFixture<VelibStationFieldsComponent>;
-  let service: VelibStationFieldsService;
+  let comp: VelibDataRealtimeListComponent;
+  let fixture: ComponentFixture<VelibDataRealtimeListComponent>;
+  let service: VelibDataRealtimeApiService;
   let routerNavigateSpy: SpyInstance<Promise<boolean>>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule.withRoutes([{path: 'velib-station-fields', component: VelibStationFieldsComponent}]),
+        RouterTestingModule.withRoutes([{path: 'velib-station-fields', component: VelibDataRealtimeListComponent}]),
         HttpClientTestingModule,
       ],
-      declarations: [VelibStationFieldsComponent],
+      declarations: [VelibDataRealtimeListComponent],
       providers: [
         {
           provide: ActivatedRoute,
@@ -43,12 +43,12 @@ describe('VelibStationFields Management Component', () => {
         },
       ],
     })
-      .overrideTemplate(VelibStationFieldsComponent, '')
+      .overrideTemplate(VelibDataRealtimeListComponent, '')
       .compileComponents();
 
-    fixture = TestBed.createComponent(VelibStationFieldsComponent);
+    fixture = TestBed.createComponent(VelibDataRealtimeListComponent);
     comp = fixture.componentInstance;
-    service = TestBed.inject(VelibStationFieldsService);
+    service = TestBed.inject(VelibDataRealtimeApiService);
     routerNavigateSpy = jest.spyOn(comp.router, 'navigate');
 
     const headers = new HttpHeaders();

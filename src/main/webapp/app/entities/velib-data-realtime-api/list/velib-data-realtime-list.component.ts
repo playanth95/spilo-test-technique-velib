@@ -4,14 +4,14 @@ import {combineLatest, interval, Observable, switchMap, tap} from 'rxjs';
 
 import {ITEMS_PER_PAGE, PAGE_HEADER} from 'app/config/pagination.constants';
 import {ASC_OPEN_DATA, DEFAULT_SORT_DATA, SORT} from 'app/config/navigation.constants';
-import {EntityResponseType, VelibStationFieldsService} from '../service/velib-station-fields.service';
+import {EntityResponseType, VelibDataRealtimeApiService} from '../service/velib-data-realtime-api.service';
 import {Record, VelibAvailabilityApiResponse} from "../../velib-availability-api/velib-availability.model";
 
 @Component({
   selector: 'jhi-velib-station-fields',
-  templateUrl: './velib-station-fields.component.html',
+  templateUrl: './velib-data-realtime-list.component.html',
 })
-export class VelibStationFieldsComponent implements OnInit {
+export class VelibDataRealtimeListComponent implements OnInit {
   records?: Record[];
   isLoading = false;
 
@@ -23,7 +23,7 @@ export class VelibStationFieldsComponent implements OnInit {
   page = 1;
 
   constructor(
-    protected velibStationFieldsService: VelibStationFieldsService,
+    protected velibStationFieldsService: VelibDataRealtimeApiService,
     protected activatedRoute: ActivatedRoute,
     public router: Router
   ) {
@@ -32,6 +32,7 @@ export class VelibStationFieldsComponent implements OnInit {
   trackId = (_index: number, item: Record): number => this.velibStationFieldsService.getVelibStationFieldsIdentifier(item);
 
   ngOnInit(): void {
+    console.log("j init le componsant");
     this.load();
     // Refresh every minute (60,000 milliseconds)
     interval(60000).subscribe(() => {
@@ -74,9 +75,11 @@ export class VelibStationFieldsComponent implements OnInit {
   protected fillComponentAttributeFromRoute(params: ParamMap, data: Data): void {
     const page = params.get(PAGE_HEADER);
     this.page = +(page ?? 1);
-    const sort = (params.get(SORT) ?? data[DEFAULT_SORT_DATA]).split(',');
-    this.predicate = sort[0];
-    this.ascending = sort[1] === ASC_OPEN_DATA;
+    if(data[DEFAULT_SORT_DATA]) {
+      const sort = (params.get(SORT) ?? data[DEFAULT_SORT_DATA]).split(',');
+      this.predicate = sort[0];
+      this.ascending = sort[1] === ASC_OPEN_DATA;
+    }
   }
 
   protected onResponseSuccess(response: EntityResponseType): void {

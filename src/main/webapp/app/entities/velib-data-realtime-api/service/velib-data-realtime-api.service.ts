@@ -10,7 +10,7 @@ import {Record, VelibAvailabilityApiResponse} from "../../velib-availability-api
 export type EntityResponseType = HttpResponse<VelibAvailabilityApiResponse>;
 
 @Injectable({providedIn: 'root'})
-export class VelibStationFieldsService {
+export class VelibDataRealtimeApiService {
   private resourceUrl = "https://opendata.paris.fr/api/records/1.0/search/" +
     "?dataset=velib-disponibilite-en-temps-reel&q=&facet=name&facet=is_installed&facet=is_renting&facet=is_returning&facet=paris&geofilter.distance=48.8709807,2.3353503,1000";
 

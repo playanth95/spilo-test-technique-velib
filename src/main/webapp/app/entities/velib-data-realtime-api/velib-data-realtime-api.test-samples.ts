@@ -1,4 +1,4 @@
-import { IVelibStationFields, NewVelibStationFields } from './velib-station-fields.model';
+import { IVelibStationFields, NewVelibStationFields } from './velib-data-realtime-api.model';
 
 export const sampleWithRequiredData: IVelibStationFields = {
   id: 86649,
