@@ -11,10 +11,24 @@ export type EntityResponseType = HttpResponse<VelibAvailabilityApiResponse>;
 
 @Injectable({providedIn: 'root'})
 export class VelibDataRealtimeApiService {
-  private resourceUrl = "https://opendata.paris.fr/api/records/1.0/search/" +
-    "?dataset=velib-disponibilite-en-temps-reel&q=&facet=name&facet=is_installed&facet=is_renting&facet=is_returning&facet=paris&geofilter.distance=48.8709807,2.3353503,1000";
+  private latitudeSplio = 48.8709807;
+  private longitudeSplio = 2.3353503;
+  private distanceMaxSplio = 1000;
+  private timeZone = 'Europe/Paris';
+  private dataSet = 'velib-disponibilite-en-temps-reel';
+  private readonly resourceUrl: string;
 
   constructor(protected http: HttpClient, protected applicationConfigService: ApplicationConfigService) {
+    this.resourceUrl = "https://opendata.paris.fr/api/records/1.0/search/" +
+    "?dataset=" + this.dataSet +
+    "&q=" +
+    "&facet=name" +
+    "&facet=is_installed" +
+    "&facet=is_renting" +
+    "&facet=is_returning" +
+    "&facet=paris" +
+    "&geofilter.distance=" + this.latitudeSplio + ',' + this.longitudeSplio + ',' + this.distanceMaxSplio +
+    "&timezone=" + this.timeZone;
   }
 
 

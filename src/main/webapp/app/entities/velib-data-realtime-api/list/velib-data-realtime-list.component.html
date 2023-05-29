@@ -1,6 +1,5 @@
 <div>
   <h2 id="page-heading" data-cy="VelibStationFieldsHeading">
-
     <div class="d-flex justify-content-end">
       <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
         <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
@@ -93,7 +92,7 @@
       <tbody>
 
         <tr *ngFor="let record of records; trackBy: trackId" data-cy="entityTable">
-          <td>{{ record.fields?.duedate | date: 'dd/MM/yyyy hh:mm' }}</td>
+            <td>{{ record.fields?.duedate | date: 'dd/MM/yyyy hh:mm' }}</td>
           <td>{{ record.fields?.name }}</td>
           <td>{{ record.fields?.dist | number: '1.0-0' }} m</td>
           <td>{{ record.fields?.ebike }}</td>
