@@ -71,7 +71,6 @@ export class VelibStatsDataComponent implements OnInit {
   sortAndSliceMap(map: Map<string, number>, count: number): any[] {
     const sortedArray = Array.from(map.entries()).sort((a, b) => b[1] - a[1]);
     const slicedArray = sortedArray.slice(0, count);
-    console.log(slicedArray);
     return slicedArray;
   }
 
