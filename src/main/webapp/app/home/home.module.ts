@@ -4,7 +4,7 @@ import {RouterModule} from '@angular/router';
 import {SharedModule} from 'app/shared/shared.module';
 import {HOME_ROUTE} from './home.route';
 import {HomeComponent} from './home.component';
-import {VelibStationFieldsModule} from "../entities/velib-station-fields/velib-station-fields.module";
+import {VelibStationFieldsModule} from "../entities/velib-data-realtime-api/velib-station-fields.module";
 import {VelibStatsDataModule} from "../entities/velib-stats-data/velib-stats-data.module";
 
 @NgModule({

@@ -40,11 +40,16 @@ Avoir graldle d'instalé sur son poste
 ### Commandes à éxécuter pour lancer le projet
 
 ```
-* npm install ou yarn install
+Ouvrir deux terminaux et se rendre à la racine du projet =>
 
-* ./gradlew -x webapp => Lance le serveur sur le port 8080
+Dans le premier terminal: 
 
-* npm start => Lance le serveur Angular sur le port 9000
+* ./gradlew -x webapp => Lance le serveur back SpringBoot sur le port 8080
+
+Dans le second:
+
+* yarn install ou npm install
+* npm start => Lance le serveur front Angular sur le port 9000
 ```
 
 Se rendre sur son navigateur et aller à l'adresse suivante
@@ -78,3 +83,19 @@ L'image ci dessous représente, la moyenne des vélos disponibles  par heure pou
 L'image ci dessous représente, la moyenne des emplacements libres par heure pour chaque station présent dans le dataset
 ```
 ![](./src/main/resources/readme/FreeDockAvailable.png)
+
+# Code
+
+```
+Le traitement des données moyennes des stations de vélibs se fait dans la classe:
+
+ - VelibStatService.java
+
+Le test unitaire associé à cette classe et ces méthodes:
+
+- VelibStatServiceTest.java
+
+L'affichage des données des stations de vélibs situées à proximité de Splio se fait coté front:
+ 
+ - src/main/webapp/app/entities/velib-data-realtime-api
+```

@@ -8,7 +8,7 @@ import {VelibStatsDataModule} from "./velib-stats-data/velib-stats-data.module";
       {
         path: 'velib-station-fields',
         data: { pageTitle: 'velibstatsApp.velibStationFields.home.title' },
-        loadChildren: () => import('./velib-station-fields/velib-station-fields.module').then(m => m.VelibStationFieldsModule),
+        loadChildren: () => import('./velib-data-realtime-api/velib-station-fields.module').then(m => m.VelibStationFieldsModule),
       },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
