@@ -9,16 +9,14 @@
       </button>
     </div>
   </h2>
-  <h2>test</h2>
 
   <div class="alert alert-warning" id="no-result" *ngIf="records?.length === 0">
     <span jhiTranslate="velibstatsApp.velibStationFields.home.notFound">Aucun Velib Station fields? trouvé</span>
   </div>
 
   <div class="table-responsive table-entities" id="entities" *ngIf="records && records.length > 0">
-    <p>Liste des stations de Vélibs proche de splio, inférieures à 1km de distance !</p>
-    <p>La Liste des stations de Vélibs proche de splio, est rafraîchie toutes les minutes</p>
-
+    <p>Liste des stations de Vélibs proche de splio, situées à moins de 1km de distance !</p>
+    <p>Cette liste  est rafraîchie toutes les minutes.</p>
     <table class="table table-striped" aria-describedby="page-heading">
       <thead>
         <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
@@ -40,12 +38,7 @@
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
-          <th scope="col" jhiSortBy="stationcode">
-            <div class="d-flex">
-              <span jhiTranslate="velibstatsApp.velibStationFields.stationcode">Stationcode</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
+
           <th scope="col" jhiSortBy="ebike">
             <div class="d-flex">
               <span jhiTranslate="velibstatsApp.velibStationFields.ebike">Ebike</span>
@@ -88,13 +81,8 @@
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
-          <th scope="col" jhiSortBy="nom_arrondissement_communes">
-            <div class="d-flex">
-              <span jhiTranslate="velibstatsApp.velibStationFields.nomArrondissementCommunes">Nom Arrondissement Communes</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="isReturning">
+
+          <th scope="col" jhiSortBy="is_returning">
             <div class="d-flex">
               <span jhiTranslate="velibstatsApp.velibStationFields.isReturning">Is Returning</span>
               <fa-icon class="p-1" icon="sort"></fa-icon>
@@ -109,7 +97,6 @@
           <td>{{ record.fields?.duedate | date: 'dd/MM/yyyy hh:mm' }}</td>
           <td>{{ record.fields?.name }}</td>
           <td>{{ record.fields?.dist | number: '1.0-0' }} m</td>
-          <td>{{ record.fields?.stationcode }}</td>
           <td>{{ record.fields?.ebike }}</td>
           <td>{{ record.fields?.mechanical }}</td>
           <td><span [ngClass]="setClasses(record.fields?.numbikesavailable)">{{ record.fields?.numbikesavailable }}</span></td>
@@ -117,7 +104,6 @@
           <td>{{ record.fields?.capacity }}</td>
           <td>{{ record.fields?.is_renting }}</td>
           <td>{{ record.fields?.is_installed }}</td>
-          <td>{{ record.fields?.nom_arrondissement_communes }}</td>
           <td>{{ record.fields?.is_returning }}</td>
           <td class="text-end">
           </td>

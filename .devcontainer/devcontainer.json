@@ -15,12 +15,10 @@
       "NODE_VERSION": "lts/*"
     }
   },
-
   // Set *default* container specific settings.json values on container create.
   "settings": {
     "java.home": "/docker-java-home"
   },
-
   // Add the IDs of extensions you want installed when the container is created.
   "extensions": [
     "angular.ng-template",
@@ -32,10 +30,13 @@
     "pivotal.vscode-boot-dev-pack",
     "esbenp.prettier-vscode"
   ],
-
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [4200, 3001, 9000, 8080],
-
+  "forwardPorts": [
+    4200,
+    3001,
+    9000,
+    8080
+  ],
   // Use 'postCreateCommand' to run commands after the container is created.
   // "postCreateCommand": "java -version",
 
@@ -47,37 +48,3 @@
   }
 }
 
-
-[ {
-  "datasetid" : "velib-disponibilite-en-temps-reel",
-  "recordid" : "0cd9f09b02f7bce44681a581e7c9861aaa3718c1",
-  "fields" : {
-    "station_state" : "Operative",
-    "dist" : "84",
-    "densitylevel" : "1",
-    "nbbikeoverflow" : 0,
-    "maxbikeoverflow" : 16,
-    "nbedock" : 17,
-    "station_name" : "Favart - Italiens",
-    "kioskstate" : "yes",
-    "nbfreeedock" : 8,
-    "station_type" : "yes",
-    "station_code" : "2013",
-    "creditcard" : "no",
-    "station" : "{\"code\": \"2013\", \"name\": \"Favart - Italiens\", \"state\": \"Operative\", \"type\": \"yes\", \"dueDate\": 1552818372, \"gps\": {\"latitude\": 48.87144635392104, \"longitude\": 2.338290105850787}}",
-    "nbebike" : 0,
-    "duedate" : "2019-03-17",
-    "nbebikeoverflow" : 0,
-    "nbfreedock" : 2,
-    "overflow" : "no",
-    "nbdock" : 2,
-    "geo" : [ 48.87144635392104, 2.338290105850787 ],
-    "overflowactivation" : "no",
-    "nbbike" : 2
-  },
-  "geometry" : {
-    "type" : "Point",
-    "coordinates" : [ 2.338290105850787, 48.87144635392104 ]
-  },
-  "record_timestamp" : "2019-05-13T05:00:32+00:00"
-}]
