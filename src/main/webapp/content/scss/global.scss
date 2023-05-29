@@ -237,3 +237,21 @@ angular-cli removes postcss-rtl processed inline css, processed rules must be ad
   }
 }
 /* jhipster-needle-scss-add-main JHipster will add new css style */
+/* ==========================================================================
+Logo styles
+========================================================================== */
+.logo-img {
+  height: 45px;
+  width: 45px;
+  display: inline-block;
+  vertical-align: middle;
+  background: url('../../content/images/Velib-couple.png') no-repeat center center;
+  background-size: contain;
+}
+
+
+.logo-img-big {
+  height: 85px;
+  width: 88px;
+  @extend .logo-img
+}
