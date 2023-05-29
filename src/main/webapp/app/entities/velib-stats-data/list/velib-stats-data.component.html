@@ -34,7 +34,7 @@
     <tr *ngFor="let station of getStations(velibDataApiResponse?.stationNameHourAverageBikeAvailable)">
       <td>{{ station }}</td>
       <td
-        *ngFor="let hour of getHours(velibDataApiResponse?.stationNameHourAverageBikeAvailable)">{{ getAvailability(velibDataApiResponse?.stationNameHourAverageBikeAvailable?.[station], hour) | number: '1.0-0' }}</td>
+        *ngFor="let hour of getHours(velibDataApiResponse?.stationNameHourAverageBikeAvailable)">{{ getAvailability(velibDataApiResponse.stationNameHourAverageBikeAvailable?.[station], hour) | number: '1.0-0' }}</td>
     </tr>
     </tbody>
   </table>
@@ -53,7 +53,7 @@
     <tr *ngFor="let station of getStations(velibDataApiResponse?.stationNameHourAverageFreeDockAvailable)">
       <td>{{ station }}</td>
       <td
-        *ngFor="let hour of getHours(velibDataApiResponse?.stationNameHourAverageFreeDockAvailable)">{{ getAvailability(velibDataApiResponse?.stationNameHourAverageFreeDockAvailable?.[station], hour) | number: '1.0-0' }}</td>
+        *ngFor="let hour of getHours(velibDataApiResponse?.stationNameHourAverageFreeDockAvailable)">{{ getAvailability(velibDataApiResponse.stationNameHourAverageFreeDockAvailable?.[station], hour) | number: '1.0-0' }}</td>
     </tr>
     </tbody>
   </table>
